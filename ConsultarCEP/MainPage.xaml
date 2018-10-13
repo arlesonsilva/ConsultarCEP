@@ -1,7 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ConsultarCEP" x:Class="ConsultarCEP.MainPage">
-    <StackLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:ConsultarCEP" 
+             x:Class="ConsultarCEP.MainPage">
+    <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <Image Source="logo.png" 
+               HeightRequest="40" />
+        
+        <Entry Placeholder="Digite o cep" 
+               PlaceholderColor="#FFBF00" 
+               BackgroundColor="#FFFFFF"
+               x:Name="lbCep" />
+        
+        <Button Text="BUSCAR CEP" 
+                TextColor="#FFFFFF" 
+                BackgroundColor="#00416B"
+                x:Name="btBuscar" />
+        
+        <Label Text=""
+               TextColor="Black"
+               WidthRequest="250" 
+               HeightRequest="150" 
+               HorizontalOptions="Center" 
+               VerticalOptions="CenterAndExpand"
+               x:Name="lbResultado"/>
+        
     </StackLayout>
 </ContentPage>
