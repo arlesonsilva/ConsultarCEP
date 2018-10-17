@@ -22,12 +22,26 @@ namespace ConsultarCEP
             String cep = lbCep.Text.Trim();
             if (isValidCEP(cep)) 
             {
-                Address address = CepService.SearchAddressCEP(cep);
-                lbResultado.Text = string.Format("Endereco: {0} \nBairro: {1} \nCidade: {2} \nEstado: {3}",
-                                                 address.logradouro,
-                                                 address.bairro,
-                                                 address.localidade,
-                                                 address.uf);
+                try
+                {
+                    Address address = CepService.SearchAddressCEP(cep);
+                    if (address != null) 
+                    {
+                        lbResultado.Text = string.Format("Endereco: {0} \nBairro: {1} \nCidade: {2} \nEstado: {3}",
+                                                     address.logradouro,
+                                                     address.bairro,
+                                                     address.localidade,
+                                                     address.uf);
+                    }else
+                    {
+                        DisplayAlert("ERRO", "Endereço não encontrado para o cep informado: " + cep, "Ok");
+                    }
+
+                } catch (Exception e)
+                {
+                    DisplayAlert("ERRO", e.Message, "Ok");
+                }
+
             }
         }
 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net;
-using ConsultarCEP.Service.Model;
+using ConsultarCEP.MAC.Service.Model;
 using Newtonsoft.Json;
 
-namespace ConsultarCEP.Service
+namespace ConsultarCEP.MAC.Service
 {
     public class CepService
     {
